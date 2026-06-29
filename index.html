@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BRYKHANOVbranding — сайты, боты, логотипы - быстро, супер дешево и главное работающе!</title>
+    <title>BRYBRANDING — сайты, боты, логотипы</title>
     <style>
       :root {
         --primary: #2563eb;
@@ -15,13 +15,16 @@
         --border: #d1d5db;
         --gray-dark: #1f2937;
       }
+
       * { box-sizing: border-box; margin: 0; padding: 0; }
+
       body {
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
         background: var(--bg);
         color: var(--text);
         line-height: 1.6;
       }
+
       .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
       header {
@@ -32,12 +35,14 @@
         border-bottom: 1px solid var(--border);
         margin-bottom: 32px;
       }
+
       .logo {
         font-weight: 700;
         font-size: 1.125rem;
         color: var(--gray-dark);
         letter-spacing: 0.4px;
       }
+
       nav a {
         margin-left: 24px;
         text-decoration: none;
@@ -45,6 +50,7 @@
         font-weight: 500;
         transition: color 0.2s;
       }
+
       nav a:hover { color: var(--primary); }
 
       h1 {
@@ -52,6 +58,7 @@
         color: var(--gray-dark);
         margin-bottom: 8px;
       }
+
       h2 {
         font-size: clamp(1.5rem, 4vw, 2rem);
         color: var(--gray-dark);
@@ -59,6 +66,7 @@
         margin: 40px 0 24px;
       }
 
+      /* Hero-блок: две колонки, на мобильных — одна */
       .hero {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -66,27 +74,44 @@
         margin-top: 32px;
         align-items: start;
       }
-      @media (max-width: 768px) { .hero { grid-template-columns: 1fr; } }
 
-      .image-placeholder {
+      @media (max-width: 768px) {
+        .hero { grid-template-columns: 1fr; }
+      }
+
+      .hero-text h3 {
+        color: var(--gray-dark);
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+      }
+
+      .hero-text p {
+        color: var(--text-light);
+      }
+
+      /* Контейнер для картинки — центрирует её */
+      .hero-image-wrapper {
         width: 100%;
-        aspect-ratio: 4/3;
-        background-color: #e5e7eb;
-        border: 1px solid var(--border);
-        border-radius: 12px;
         display: flex;
-        align-items: center;
         justify-content: center;
-        color: #9ca3af;
-     <div>
-  <img src="images/IMG_2584.JPEG" alt="Логотип" style="width: 100%; max-width: 500px; height: auto; border-radius: 12px;">
-</div>
-        .features {
+      }
+
+      /* Сама картинка — не шире 500px, сохраняет пропорции */
+      .hero-image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+
+      .features {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 20px;
         margin-top: 32px;
       }
+
       .feature-card {
         background: var(--card-bg);
         padding: 24px;
@@ -94,11 +119,13 @@
         box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         border: 1px solid var(--border);
       }
+
       .feature-card h3 {
         color: var(--gray-dark);
         font-size: 1.125rem;
         margin-bottom: 10px;
       }
+
       .price-tag {
         display: inline-block;
         background: #e0e7ff;
@@ -116,6 +143,7 @@
         gap: 24px;
         margin: 40px 0;
       }
+
       .tariff-card {
         background: var(--card-bg);
         padding: 32px;
@@ -123,22 +151,26 @@
         border: 1px solid var(--border);
         height: 100%;
       }
+
       .tariff-title {
         font-size: 1.25rem;
         font-weight: 700;
         color: var(--gray-dark);
         margin-bottom: 20px;
       }
+
       .tariff-list li {
         color: var(--text-light);
         margin-bottom: 8px;
       }
+
       .tariff-price {
         font-size: 1.375rem;
         font-weight: 700;
         color: var(--secondary);
         margin-top: 24px;
       }
+
       .tariff-bonus {
         margin-top: 20px;
         padding: 10px;
@@ -157,11 +189,13 @@
         border: 1px solid var(--border);
         margin: 40px 0;
       }
+
       .portfolio-block h3 {
         color: var(--gray-dark);
         font-size: 1.25rem;
         margin-bottom: 12px;
       }
+
       .portfolio-block a {
         color: var(--primary);
         text-decoration: underline;
@@ -176,17 +210,20 @@
         border: 1px solid var(--border);
         margin-top: 40px;
       }
+
       .cta-title {
         font-size: 2.5rem;
         font-weight: 700;
         color: var(--gray-dark);
         margin-bottom: 16px;
       }
+
       .cta-subtitle {
         color: var(--text-light);
         max-width: 640px;
         margin: 0 auto 32px auto;
       }
+
       button {
         background: var(--primary);
         color: white;
@@ -198,6 +235,7 @@
         cursor: pointer;
         transition: background 0.2s, transform 0.1s;
       }
+
       button:hover { background: var(--secondary); transform: translateY(-1px); }
 
       footer {
@@ -225,17 +263,21 @@
         <h1>Сайты, боты и логотипы</h1>
         <p style="color: var(--text-light);">Проекты под ключ: чистый код, понятная структура, публикация на хостинге.</p>
 
+        <!-- Hero с картинкой -->
         <div class="hero">
-          <div>
+          <div class="hero-text">
             <h3>Что доступно прямо сейчас</h3>
-            <p style="color: var(--text-light); margin-top: 12px;">Готовые решения и тарифы: выберите подходящий вариант и получите результат в срок.</p>
+            <p style="color: var(--text-light); margin-top: 12px;">
+              Готовые решения и тарифы: выберите подходящий вариант и получите результат в срок.
+            </p>
           </div>
-          <div>
-            <div class="image-placeholder">
-              <svg viewBox="0 0 24 24">
-                <path d="M21 15a2 2 0 012 2v2a2 2 0 01-2 2H3a2 2 0 01-2-2v-2a2 2 0 012-2zm0 4H3v-2h18zm-7-6a2 2 0 012 2v4a2 2 0 01-2 2H7a2 2 0 01-2-2v-4a2 2 0 012-2zm-3 4h10v2H7z"/>
-              </svg>
-            </div>
+          <div class="hero-image-wrapper">
+            <!-- ВАЖНО: проверь имя файла и папку, как ниже в инструкции -->
+            <img 
+              src="images/IMG_2584.JPEG" 
+              alt="Логотип BRYBRANDING" 
+              class="hero-image"
+            >
           </div>
         </div>
 
