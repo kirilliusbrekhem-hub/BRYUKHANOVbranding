@@ -5,33 +5,112 @@
     <title>BRYBRANDING</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
     <h1>BRYBRANDING</h1>
+
     <nav>
         <a href="index.html">Главная</a>
         <a href="prices.html">Прайс</a>
         <a href="tariffs.html">Тарифы</a>
         <a href="contacts.html">Контакты</a>
     </nav>
+
+    <!-- 🌗 КНОПКА ТЕМЫ -->
+    <button onclick="toggleTheme()" class="button" style="float:right;">
+        🌗 Тема
+    </button>
 </header>
 
 <div class="container">
-    <h2>Создание сайтов, ботов, логотипов и маркетплейс-карточек</h2>
-    <p>БРЕНДИНГ без церемоний - быстро, дёшево и в точку!</p>
+
+    <h2>Создание сайтов, Telegram-ботов, логотипов и маркетплейс-карточек</h2>
+    <p>Быстро. Доступно. Современно.</p>
 
     <div class="card">
-        <h3>🔥 Быстро. Качественно. Недорого.</h3>
-        <p>Сайты, Telegram-боты и дизайн под ключ.</p>
+        <h3>🔥 Онлайн-заказ</h3>
+
+        <label>Услуга:</label><br><br>
+        <select id="service">
+            <option value="Сайт-лендинг - 1999 ₽">Сайт-лендинг</option>
+            <option value="Сайт-визитка - 1699 ₽">Сайт-визитка</option>
+            <option value="Telegram бот - 2599 ₽">Telegram бот</option>
+            <option value="Логотип - 499 ₽">Логотип</option>
+            <option value="Карточка товара - 500 ₽">Карточка товара</option>
+        </select>
+
+        <br><br>
+
+        <input id="name" type="text" placeholder="Ваше имя" style="width:100%; padding:10px;">
+        <br><br>
+
+        <textarea id="comment" placeholder="Комментарий" style="width:100%; padding:10px;"></textarea>
+
+        <br><br>
+
+        <a class="button" id="orderBtn" target="_blank">
+            🚀 Отправить заказ в Telegram
+        </a>
     </div>
 
-    <a class="button" href="prices.html">Посмотреть прайс</a>
 </div>
 
+<!-- 💬 КНОПКА ЧАТА -->
+<a class="button"
+   href="https://t.me/BRYBRANDING"
+   target="_blank"
+   style="position:fixed; bottom:20px; right:20px;">
+   💬 Чат
+</a>
+
 <footer>
-     BRYUKHANOVbranding
+    © BRYUKHANOVbranding
 </footer>
+
+<!-- ⚙️ JS -->
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("light");
+
+    if (document.body.classList.contains("light")) {
+        localStorage.setItem("theme", "light");
+    } else {
+        localStorage.setItem("theme", "dark");
+    }
+}
+
+window.onload = function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "light") {
+        document.body.classList.add("light");
+    }
+
+    updateTelegramLink();
+};
+
+function updateTelegramLink() {
+    const service = document.getElementById("service");
+    const name = document.getElementById("name");
+    const comment = document.getElementById("comment");
+
+    const text =
+`🛒 НОВЫЙ ЗАКАЗ BRYBRANDING
+------------------------
+📌 Услуга: ${service.value}
+👤 Имя: ${name.value}
+📝 Комментарий: ${comment.value}`;
+
+    const url = "https://t.me/BRYBRANDING?text=" + encodeURIComponent(text);
+
+    document.getElementById("orderBtn").href = url;
+}
+
+document.getElementById("service").addEventListener("change", updateTelegramLink);
+document.getElementById("name").addEventListener("input", updateTelegramLink);
+document.getElementById("comment").addEventListener("input", updateTelegramLink);
+</script>
 
 </body>
 </html>
